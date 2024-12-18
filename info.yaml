@@ -3,6 +3,51 @@ project:
   title:        "Dodger_Game"      # Project title
   author:       "Karan Pattanaik, Vikas Maurya"      # Your name
   discord:      "--"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "SPI TFT Controller to send data/commands via SPI interface"      # One line description of what your project does
+  language:     "TL-Verilog" # other examples include SystemVerilog, TL-Verilog, Amaranth, VHDL, etc
+  clock_hz:     100000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_spi_tft_controller"
+
+  # List your project's Verilog source files here. (For TL-Verilog (.tlv) sources, list the corresponding (.v) generated Verilog files (which should not be committed to the repo).)
+  # Verilog/TL-Verilog source files must be in ./src and you must list each Verilog source file separately, one per line:
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.sv"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+pinout:
+  # Inputs
+  ui[0]: "clk"         # System clock input
+  ui[1]: "rst"         # Reset signal input
+  ui[2]: "start"       # Start signal input
+  ui[3]: "dc_select"   # Command/Data selection input
+  ui[4]: "data_in[0]"  # 8-bit data input LSB
+  ui[5]: "data_in[1]"  # Data input bit 1
+  ui[6]: "data_in[2]"  # Data input bit 2
+  ui[7]: "data_in[3]"  # Data input bit 3
+
+  # Outputs
+  uo[0]: "mosi"        # MOSI (Master Out Slave In) output
+  uo[1]: "dc"          # Data/Command pin output
+  uo[2]: "reset"       # TFT Reset pin output
+  uo[3]: "cs"          # Chip Select output
+  uo[4]: "sclk"        # SPI Clock output
+  uo[5]: "led"         # LED Backlight output
+  uo[6]: ""            # Unused output
+  uo[7]: ""            # Unused output
+
+  # Bidirectional pins
+  uio[0]: ""           # Unused bidirectional pin
+  uio[1]: ""           # Unused bidirectional pin# Tiny Tapeout project information
+project:
+  title:        "Dodger_Game"      # Project title
+  author:       "Karan Pattanaik, Vikas Maurya"      # Your name
+  discord:      "--"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "="      # One line description of what your project does
   language:     "TL-Verilog" # other examples include SystemVerilog, TL-Verilog, Amaranth, VHDL, etc
   clock_hz:     100000000       # Clock frequency in Hz (or 0 if not applicable)
@@ -34,22 +79,13 @@ pinout:
   # Outputs
   uo[0]: ""
   uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
 
-  # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[2]: ""           # Unused bidirectional pin
+  uio[3]: ""           # Unused bidirectional pin
+  uio[4]: ""           # Unused bidirectional pin
+  uio[5]: ""           # Unused bidirectional pin
+  uio[6]: ""           # Unused bidirectional pin
+  uio[7]: ""           # Unused bidirectional pin
 
 # Do not change!
 yaml_version: 6
